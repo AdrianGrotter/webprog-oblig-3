@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="no">
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="script.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<head>
+    <meta charset="UTF-8">
+    <title>Kinobilletter</title>
+</head>
+<body class="bg-dark text-white" style="margin-top: 20px;">
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-lg-4">
+            <form>
+                <legend>Bestille kinobilletter</legend>
+                <div class="form-group">
+                    <label for="ddl">Filmer</label>
+                    <div id="ddl"></div>
+                </div>
+                <div class="form-group">
+                    <label for="inpAntall">Antall</label>
+                    <input id="inpAntall" type="number" class="form-control">
+                    <small id="feilAntall" class="form-text text-danger"></small>
+                </div>
+                <div class="form-group">
+                    <label for="inpFornavn">Fornavn</label>
+                    <input id="inpFornavn" type="text" class="form-control">
+                    <small id="feilFornavn" class="form-text text-danger"></small>
+                </div>
+                <div class="form-group">
+                    <label for="inpEtternavn">Etternavn</label>
+                    <input id="inpEtternavn" type="text" class="form-control">
+                    <small id="feilEtternavn" class="form-text text-danger"></small>
+                </div>
+                <div class="form-group">
+                    <label for="inpTelefonnr">Telefonnr</label>
+                    <input id="inpTelefonnr" type="number" class="form-control">
+                    <small id="feilTelefonnr" class="form-text text-danger"></small>
+                </div>
+                <div class="form-group">
+                    <label for="inpEpost">Epost</label>
+                    <input id="inpEpost" type="text" class="form-control">
+                    <small id="feilEpost" class="form-text text-danger"></small>
+                </div>
+                <div class="form-group">
+                    <button onclick="kjopBillett()" type="button" class="btn btn-success">Kjøp billett</button>
+                    <button onclick="slettData()" type="button" class="btn btn-danger">Slett register</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-xs-12 col-lg-8">
+            <div  style="float:right" >
+                <label for="sortering">Sortering: </label>
+                <select name="sortering" id="sortering" class="form-select" onchange="hentAlle()">
+                    <option value="Etternavn">Etternavn</option>
+                    <option value="Fornavn">Fornavn</option>
+                    <option value="Filmtittel">Filmtittel</option>
+                    <option value="Antall">Antall</option>
+                </select>
+            </div>
+            <h3>Billettregister</h3>
+            <div id="ut"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
